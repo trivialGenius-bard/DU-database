@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet6" targetNamespace="http://tempuri.org/DataSet6.xsd" xmlns:mstns="http://tempuri.org/DataSet6.xsd" xmlns="http://tempuri.org/DataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SampleDataBaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SampleDataBaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.сампледатабасевалксраугх.Properties.Settings.GlobalReference.Default.SampleDataBaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Need_DUTableAdapter" GeneratorDataComponentClassName="Need_DUTableAdapter" Name="Need_DU" UserDataComponentName="Need_DUTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SampleDataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select Id_Ch as 'ID Ребенка', Fullname as 'Имя', Category as 'Категория', Queue_pos as 'Номер в очереди' from Child
+inner join Document
+on Id_Ch = Id_Child
+where [Document].[Group] is null</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID Ребенка" DataSetColumn="ID Ребенка" />
+              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
+              <Mapping SourceColumn="Категория" DataSetColumn="Категория" />
+              <Mapping SourceColumn="Номер в очереди" DataSetColumn="Номер в очереди" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet6" msprop:Generator_UserDSName="DataSet6">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Need_DU" msprop:Generator_TableClassName="Need_DUDataTable" msprop:Generator_TableVarName="tableNeed_DU" msprop:Generator_TablePropName="Need_DU" msprop:Generator_RowDeletingName="Need_DURowDeleting" msprop:Generator_RowChangingName="Need_DURowChanging" msprop:Generator_RowEvHandlerName="Need_DURowChangeEventHandler" msprop:Generator_RowDeletedName="Need_DURowDeleted" msprop:Generator_UserTableName="Need_DU" msprop:Generator_RowChangedName="Need_DURowChanged" msprop:Generator_RowEvArgName="Need_DURowChangeEvent" msprop:Generator_RowClassName="Need_DURow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_x0020_Ребенка" msprop:Generator_ColumnVarNameInTable="columnID_Ребенка" msprop:Generator_ColumnPropNameInRow="ID_Ребенка" msprop:Generator_ColumnPropNameInTable="ID_РебенкаColumn" msprop:Generator_UserColumnName="ID Ребенка" type="xs:int" />
+              <xs:element name="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Категория" msprop:Generator_ColumnVarNameInTable="columnКатегория" msprop:Generator_ColumnPropNameInRow="Категория" msprop:Generator_ColumnPropNameInTable="КатегорияColumn" msprop:Generator_UserColumnName="Категория" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Номер_x0020_в_x0020_очереди" msprop:Generator_ColumnVarNameInTable="columnНомер_в_очереди" msprop:Generator_ColumnPropNameInRow="Номер_в_очереди" msprop:Generator_ColumnPropNameInTable="Номер_в_очередиColumn" msprop:Generator_UserColumnName="Номер в очереди" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Need_DU" />
+      <xs:field xpath="mstns:ID_x0020_Ребенка" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

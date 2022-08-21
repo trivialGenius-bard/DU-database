@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet3" targetNamespace="http://tempuri.org/DataSet3.xsd" xmlns:mstns="http://tempuri.org/DataSet3.xsd" xmlns="http://tempuri.org/DataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SampleDataBaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SampleDataBaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.сампледатабасевалксраугх.Properties.Settings.GlobalReference.Default.SampleDataBaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ОбучающиесяTableAdapter" GeneratorDataComponentClassName="ОбучающиесяTableAdapter" Name="Обучающиеся" UserDataComponentName="ОбучающиесяTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SampleDataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       Child.FullName as 'Имя', Child.Date_Brth as 'Дата рождения', Relative.Resembl AS 'Родственник', MIN(Relative.Name) AS 'Имя родственника'
+FROM            Child LEFT OUTER JOIN
+                         Family ON Family.Child = Child.Id_Ch LEFT OUTER JOIN
+                         Relative ON Family.Relative = Relative.Id_Rel LEFT OUTER JOIN
+                         [Document] ON Child.Id_Ch = [Document].Id_Child
+WHERE        ([Document].[Group] IS NOT NULL)
+GROUP BY Child.FullName, Child.Date_Brth, Relative.Resembl, Relative.Name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Родственник" DataSetColumn="Родственник" />
+              <Mapping SourceColumn="Имя родственника" DataSetColumn="Имя родственника" />
+              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
+              <Mapping SourceColumn="Дата рождения" DataSetColumn="Дата рождения" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet3" msprop:Generator_UserDSName="DataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Обучающиеся" msprop:Generator_TableClassName="ОбучающиесяDataTable" msprop:Generator_TableVarName="tableОбучающиеся" msprop:Generator_RowChangedName="ОбучающиесяRowChanged" msprop:Generator_TablePropName="Обучающиеся" msprop:Generator_RowDeletingName="ОбучающиесяRowDeleting" msprop:Generator_RowChangingName="ОбучающиесяRowChanging" msprop:Generator_RowEvHandlerName="ОбучающиесяRowChangeEventHandler" msprop:Generator_RowDeletedName="ОбучающиесяRowDeleted" msprop:Generator_RowClassName="ОбучающиесяRow" msprop:Generator_UserTableName="Обучающиеся" msprop:Generator_RowEvArgName="ОбучающиесяRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Родственник" msprop:Generator_ColumnVarNameInTable="columnРодственник" msprop:Generator_ColumnPropNameInRow="Родственник" msprop:Generator_ColumnPropNameInTable="РодственникColumn" msprop:Generator_UserColumnName="Родственник" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Имя_x0020_родственника" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnИмя_родственника" msprop:Generator_ColumnPropNameInRow="Имя_родственника" msprop:Generator_ColumnPropNameInTable="Имя_родственникаColumn" msprop:Generator_UserColumnName="Имя родственника" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_рождения" msprop:Generator_ColumnVarNameInTable="columnДата_рождения" msprop:Generator_ColumnPropNameInRow="Дата_рождения" msprop:Generator_ColumnPropNameInTable="Дата_рожденияColumn" msprop:Generator_UserColumnName="Дата рождения" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
